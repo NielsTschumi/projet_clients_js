@@ -83,16 +83,16 @@
 			</table>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row" id="div">
 		<div class="col-md-4">
 		    <p><strong>Choisir le client</strong></p>
 		</div>
 		<div class="col-md-4">
 		    <form>
-		        <select onchange=afficherText() id="listeDeroulante" size="1">
-                    <option></option>
-		            <option>Marguerite Tallmann</option>
-                    <option>Paul Dupont</option>
+		        <select class="form-control" id="listeDeroulante" onchange="afficher()">
+                    <option value=""></option>
+		            <option value="Marguerite Tallmann">Marguerite Tallmann</option>
+                    <option value="Paul Dupont">Paul Dupont</option>
 		        </select>
 		    </form>
 		</div>
@@ -127,7 +127,7 @@
 		</div>
 		<div class="col-md-2">
 			 
-			<button type="button" class="btn btn-default">
+			<button onclick="supprimer()" type="button" class="btn btn-default">
 				Supprimer
 			</button>
 		</div>

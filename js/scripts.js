@@ -1,4 +1,3 @@
-var numeroLigne = 2;
 function Ajouter() {
     var noeudNom = document.getElementById("ajouterNom").value;
     var noeudPrenom = document.getElementById("ajouterPrenom").value;
@@ -15,20 +14,32 @@ function Ajouter() {
     document.getElementById("listeDeroulante").appendChild(option1);
     option1.innerHTML = noeudNomComplet;
 }
-function afficherText() {
-    var tblNom = ["Marguerite", "Paul"]
-    var tblPrenom = ["Tallmann", "Dupont"]
-   /* var espace = " ";
-    var i;
-    var nomASupprimer = document.getElementById("listeDeroulante").nodeValue;
+function afficher() {
+    var nomComplet = document.getElementById("listeDeroulante").value;
+    var tbl = new Array();
+    tbl = nomComplet.split(" ");
+    var nom = tbl[0];
+    var prenom = tbl[1];
+    document.getElementById("supprimerNom").value = nom;
+    document.getElementById("supprimerPrenom").value = prenom;
+}
+
+function supprimer() {
+    var nom = document.getElementById("supprimerNom").value;
+    var prenom = document.getElementById("supprimerPrenom").value;
     var noeudTab = document.getElementById("tblPayeur");
-    var lesLignes = noeudTab.getElementsByTagName("tr").nodeValue;
-    for (i = 0; i < lesLignes.length; i++) {
-        if (lesLignes[i].nodeValue === nomASupprimer.nodeValue) {
-            lesLignes[i].parentNode.removeChild(lesLignes[i]);
-             
-        }
+    var lesLignes = noeudTab.getElementsByTagName("tr");
+    var longueur = lesLignes.length;
+    var i;
+    alert(longueur);
+    for (i = 0; i < longueur; i++){
+        
+        
+        
+        
     }
     
-    */
+    
+    var x = document.getElementById("listeDeroulante");
+    x.remove(x.selectedIndex);
 }
