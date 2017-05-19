@@ -5,6 +5,7 @@ function Ajouter() {
     var td1 = document.createElement("td");
     var td2 = document.createElement("td");
     document.getElementById("tblPayeur").appendChild(tr);
+    tr.setAttribute("id", noeudNom + noeudPrenom);
     tr.appendChild(td1);
     tr.appendChild(td2);
     td1.innerHTML = noeudNom;
@@ -27,18 +28,9 @@ function afficher() {
 function supprimer() {
     var nom = document.getElementById("supprimerNom").value;
     var prenom = document.getElementById("supprimerPrenom").value;
-    var noeudTab = document.getElementById("tblPayeur");
-    var lesLignes = noeudTab.getElementsByTagName("tr");
-    var longueur = lesLignes.length;
-    var i;
-    alert(longueur);
-    for (i = 0; i < longueur; i++){
-        
-        
-        
-        
-    }
-    
+    var nomPrenom = nom + prenom;
+    var element = document.getElementById(nomPrenom);
+    element.parentNode.removeChild(element);
     
     var x = document.getElementById("listeDeroulante");
     x.remove(x.selectedIndex);
