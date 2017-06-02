@@ -9,12 +9,12 @@ function Ajouter() {
     tr.appendChild(td1);
     tr.appendChild(td2);
     td1.innerHTML = noeudNom;
-    td2.innerHTML = noeudPrenom; 
-    var noeudNomComplet = noeudNom + " " + noeudPrenom;
-    var option1 = document.createElement("option");
-    document.getElementById("listeDeroulante").appendChild(option1);
-    option1.innerHTML = noeudNomComplet;
+    td2.innerHTML = noeudPrenom;
+    var noeudOption = document.createElement("option");
+    document.getElementById("listeDeroulante").appendChild(noeudOption);
+    noeudOption.innerHTML = noeudNom + " " + noeudPrenom;
 }
+
 function afficher() {
     var nomComplet = document.getElementById("listeDeroulante").value;
     var tbl = new Array();
@@ -28,10 +28,11 @@ function afficher() {
 function supprimer() {
     var nom = document.getElementById("supprimerNom").value;
     var prenom = document.getElementById("supprimerPrenom").value;
-    var nomPrenom = nom + prenom;
-    var element = document.getElementById(nomPrenom);
+    var element = document.getElementById(nom + prenom);
     element.parentNode.removeChild(element);
     
     var x = document.getElementById("listeDeroulante");
     x.remove(x.selectedIndex);
+    document.getElementById("supprimerNom").value = "";
+    document.getElementById("supprimerPrenom").value = "";
 }
